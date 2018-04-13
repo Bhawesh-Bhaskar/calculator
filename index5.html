@@ -1,0 +1,69 @@
+
+<html>
+<head>
+<title>Calculator</title>
+<script type="text/javascript" src="calculator.js"></script>
+<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+<center>
+<form name="calculator">
+<div style=" width: 400px;height: 380px;border: 1px solid #D0CECE; position:absolute; top:190px; left:300px;">
+
+<table  style="margin-top:50px;">
+<tr>
+<td>
+<input name="res" id="display" class="cal-inputresult" disabled />
+</td>
+</tr>
+<tr>
+<td>
+<input type="text" readonly="readonly" name="displayresult" id="calc_result" class="cal-input"  />
+</td>
+</tr>
+</table>
+
+<table border="0px" cellspacing="10px" style="margin-top:5px;" id="calc">
+<tr>
+<td name="left" value="(" class="cal-top" onclick="javascript:add_calc('calc','(');" ><div onclick="calculator.display.value += '('">(</div></td>
+<td name="right" value=")" class="cal-top" onclick="javascript:add_calc('calc',')');"><div onclick="calculator.display.value += ')'">)</div></td>
+<td class="cal-top" name="percent" value="%" onclick="javascript:f_calc('calc','%');"><div onclick="calculator.display.value += '%'">%</div></td>
+<td class="cal-top" name="percent" value="clear" onclick="javascript:f_calc('calc','nbs');"><font size="2"><div onclick="calculator.display.value = ''">CE</div></font></td>
+</tr>
+
+<tr>
+<td name="seven" value="7" class="cal-number" onclick="javascript:add_calc('calc',7);" ><div onclick="calculator.display.value += '7'">7</div></td>
+<td name="eight" value="8" class="cal-number" onclick="javascript:add_calc('calc',8);"><div onclick="calculator.display.value += '8'">8</div></td>
+<td name="nine" value="9"  class="cal-number" onclick="javascript:add_calc('calc',9);"><div onclick="calculator.display.value += '9'">9</div></td>
+<td class="cal-top" name="div" value="/" onclick="javascript:f_calc('calc','/');" ><div onclick="calculator.display.value += '/'">/</div></td>
+</tr>
+
+<tr>
+<td name="four" value="4" class="cal-number" onclick="javascript:add_calc('calc',4);" ><div onclick="calculator.display.value += '4'">4</div></td>
+<td name="five" value="5" class="cal-number" onclick="javascript:add_calc('calc',5);"><div onclick="calculator.display.value += '5'">5</div></td>
+<td name="six" value="6" class="cal-number" onclick="javascript:add_calc('calc',6);" ><div onclick="calculator.display.value += '6'">6</div></td>
+<td class=" cal-top" name="times" value="*" onclick="javascript:f_calc('calc','*');" ><div onclick="calculator.display.value += '*'">*</div></td>
+</tr>
+
+<tr>
+<td name="one" class="cal-number" value="1" onclick="javascript:add_calc('calc',1);"><div onclick="calculator.display.value += '1'">1</div></td>
+<td name="two" class="cal-number" value="2" onclick="javascript:add_calc('calc',2);"><div onclick="calculator.display.value += '2'">2</div></td>
+<td name="three" class="cal-number" value="3" onclick="javascript:add_calc('calc',3);"><div onclick="calculator.display.value += '3'">3</div></td>
+<td class="cal-top" name="sub" value="-" onclick="javascript:f_calc('calc','-');"><div onclick="calculator.display.value += '-'">-</div></td>
+</tr>
+
+<tr>
+<td name="zero" class="cal-number" value="0" onclick="javascript:add_calc('calc',0);"><div onclick="calculator.display.value += '0'">0</div></td>
+<td name="decimal" class="cal-number" value="." onclick="javascript:add_calc('calc','.');"><div onclick="calculator.display.value += '.'">.</div></td>
+<td name="result" value="="  onclick="javascript:f_calc('calc','=');" class="cal-result"><div onclick="calculator.display.value = eval(calculator.display.value)"><b>=</b></div></td>
+<td class="cal-top" name="add" value="+" onclick="javascript:f_calc('calc','+');"><div onclick="calculator.display.value += '+'">+</div></td>
+</tr>
+</table>
+</div>
+</form>
+</center>
+<script type="text/javascript">
+document.getElementById('calc').onload=init_calc('calc');
+</script>
+</body>
+</html>

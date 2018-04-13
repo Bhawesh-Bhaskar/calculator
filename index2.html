@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Calculator
+</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<center>
+
+<form name="calculator">
+<div style=" width: 400px;height: 360px;border: 1px solid #D0CECE; position:absolute; top:190px; left:300px;">
+
+<table  style="margin-top:50px;">
+<tr>
+<td>
+<input name="displayresult"  value="0" id="display" class="cal-input" disabled >
+</td>
+</tr>
+</table>
+<table border="0px" cellspacing="10px" style="margin-top:5px;">
+
+<tr>
+<td name="left" value="(" onclick="calculator.display.value += '('" class="cal-top">(</td>
+<td name="right" value=")" onclick="calculator.display.value += ')'" class="cal-top"> )</td>
+<td class="operator cal-top" name="percent" value="%" onclick="calculator.display.value += '%'">%</td>
+<td id="clear" name="clear" value="c" onclick="calculator.display.value = ''" class=" cal-top">AC</td>
+
+</tr>
+
+<tr>
+<td name="seven" value="7" onclick="calculator.display.value += '7'" class="cal-number">7</td>
+<td name="eight" value="8" onclick="calculator.display.value += '8'" class="cal-number">8</td>
+<td name="nine" value="9" onclick="calculator.display.value += '9'" class="cal-number">9</td>
+<td class="operator cal-top" name="div" value="/" onclick="calculator.display.value += '/'">/</td>
+</tr>
+
+<tr>
+<td name="four" value="4" onclick="calculator.display.value += '4'" class="cal-number">4</td>
+<td name="five" value="5" onclick="calculator.display.value += '5'" class="cal-number">5</td>
+<td name="six" value="6" onclick="calculator.display.value += '6'" class="cal-number">6</td>
+<td class="operator cal-top" name="times" value="*" onclick="calculator.display.value += '*'">*</td>
+</tr>
+
+<tr>
+<td name="one" value="1" onclick="calculator.display.value += '1'" class="cal-number">1</td>
+<td name="two" value="2" onclick="calculator.display.value += '2'" class="cal-number">2</td>
+<td name="three" value="3" onclick="calculator.display.value += '3'" class="cal-number">3</td>
+<td class="operator cal-top" name="minus" value="-" onclick="calculator.display.value += '-'">-</td>
+</tr>
+
+<tr>
+<td name="zero" value="0" onclick="calculator.display.value += '0'" class="cal-number">0</td>
+<td name="decimal" value="." onclick="calculator.display.value += '.'" class="cal-number">.</td>
+<td name="result" value="=" onclick="calculator.display.value = eval(calculator.display.value)" class="cal-result"><b>=</b></td>
+<td class="operator cal-top" name="plus" value="+" onclick="calculator.display.value += '+'">+</td>
+</tr>
+
+</table>
+</div>
+</form>
+
+
+</center>
+</body>
+</head>
+</html>

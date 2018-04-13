@@ -1,0 +1,128 @@
+<html>
+
+<head>
+  <title>Calculator
+  </title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <center>
+
+  <form name="calculator">
+    <div style=" width: 400px;height: 360px;border: 1px solid #D0CECE;">
+
+      <table style="margin-top:40px;">
+        <tr>
+          <td>
+            <input name="displayresult" id="display" class="cal-input" placeholder="0" disabled>
+          </td>
+        </tr>
+      </table>
+      <table border="0px" cellspacing="10px" style="margin-top:5px;">
+
+        <tr>
+          <td name="left" value="(" onclick="checkValidity('(')" class="cal-top">(</td>
+          <td name="right" value=")" onclick="checkValidity('*'); " class="cal-top"> )</td>
+          <td class="operator cal-top" name="percent" value="%" onclick="checkIfValid('%')">%</td>
+          <td id="clear" name="clear" value="c" onclick="str = calculator.display.value.slice(0, -1); calculator.display.value = str" class=" cal-top"><font size="2" id="AC">AC</font></td>
+
+        </tr>
+
+        <tr>
+          <td name="seven" value="7" onclick="calculator.display.value += '7'" class="cal-number">7</td>
+          <td name="eight" value="8" onclick="calculator.display.value += '8'" class="cal-number">8</td>
+          <td name="nine" value="9" onclick="calculator.display.value += '9'" class="cal-number">9</td>
+          <td class="operator cal-top" name="div" value="/" onclick="checkIfValid('/')">/</td>
+        </tr>
+
+        <tr>
+          <td name="four" value="4" onclick="calculator.display.value += '4'" class="cal-number">4</td>
+          <td name="five" value="5" onclick="calculator.display.value += '5'" class="cal-number">5</td>
+          <td name="six" value="6" onclick="calculator.display.value += '6'" class="cal-number">6</td>
+          <td class="operator cal-top" name="times" value="*" onclick="checkIfValid('*')">*</td>
+        </tr>
+
+        <tr>
+          <td name="one" value="1" onclick="calculator.display.value += '1'" class="cal-number">1</td>
+          <td name="two" value="2" onclick="calculator.display.value += '2'" class="cal-number">2</td>
+          <td name="three" value="3" onclick="calculator.display.value += '3'" class="cal-number">3</td>
+          <td class="operator cal-top" name="minus" value="-" onclick="checkIfValid('-')">-</td>
+        </tr>
+
+        <tr>
+          <td name="zero" value="0" onclick="calculator.display.value += '0'" class="cal-number">0</td>
+          <td name="decimal" value="." onclick="checkIfValid('.')" class="cal-number">.</td>
+          <td name="result" value="=" onclick="checkIfValid('=')" class="cal-result"><b>=</b></td>
+          <td class="operator cal-top" name="plus" value="+" onclick="checkIfValid('+')">+</td>
+        </tr>
+
+      </table>
+    </div>
+  </form>
+
+
+</center>
+</body>
+<script>
+document.getElementById("AC").onclick = function() {myFunction()};
+
+function myFunction() {
+    document.getElementById("AC").innerHTML = "CE";
+}
+
+
+function checkIfValid(symbol) {
+  if (calculator.display.value !== '') {
+    var lastDigit = calculator.display.value.slice(-1);
+    if (lastDigit == '%' || lastDigit == '/' || lastDigit == '*' || lastDigit == '-' || lastDigit == '+' || lastDigit == '.' ) {
+      return false;
+    } else {
+      if (symbol == '=') {
+        calculator.display.value = eval(calculator.display.value);
+      } else {
+        calculator.display.value += symbol;
+      }
+    }
+  }
+}
+
+
+function checkValidity(braces) {
+  if (calculator.display.value !== '[0-9]') {
+    var lastDigit = calculator.display.value.slice(-1);
+    if (  lastDigit == '*' || lastDigit == '(') {
+      return false;
+    } else {
+      if (braces == '=') {
+        calculator.display.value = eval(calculator.display.value);
+      } else {
+        calculator.display.value += braces;
+      }
+    }
+  }
+}
+</script>
+
+<input type="button" onclick="changeText(')')" value="*">
+    
+ <input id="count"/>
+
+<script>
+function changeText(value) {
+     document.getElementById('count').value =  value;   
+}
+</script>
+
+<div class="example"></div>
+
+<button onclick="myFunction()">*</button>
+
+<script>
+function myFunction() {
+    var x = document.getElementsByClassName("example");
+    x[0].innerHTML = ")";
+}
+</script>
+
+</html>
